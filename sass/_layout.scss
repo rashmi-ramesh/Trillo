@@ -1,0 +1,105 @@
+.container {
+    max-width: 120rem; //when there is space it is it will occupy 1200px, once the viewport reduces it occupies 100% of width.
+    background-color: var(--color-grey-light-1);
+    margin: 8rem auto;
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%; //so that it covers the entire viewport width, without any pink patch around
+        width: 100%;
+    }
+
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
+}
+
+.content {
+    display: flex;
+
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; //flex-basis = width, 18% of the parent element (do not grow, do not shrink, but keep the width as 18%).
+
+    display: flex;
+    flex-direction: column; // to align side-nav and legal 
+    justify-content: space-between;
+}
+
+.hotel-view {
+    // background-color: tomato; //remove later
+    flex: 1; //flex-grow = 1 , can grow and cover the entire container.
+    
+    
+    // height: 80rem; //remove later
+
+}
+
+.detail {
+    display: flex;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+    padding: 4.5rem;
+    font-size: 1.4rem; //so that it applies to both its children
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%; //occupy 60% space of the container
+    margin-right: 4.5rem;
+    // font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+}
+
+.user-reviews {
+    
+    flex: 1; //occupy the remaining space
+
+    display: flex; // this is done to align the "shaow all" button in the center
+    flex-direction: column;
+    align-items: center; //changing from default stretch to center
+}
+
